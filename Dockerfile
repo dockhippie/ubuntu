@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:yakkety
 MAINTAINER Thomas Boerger <thomas@webhippie.de>
 
 ENV DEBIAN_FRONTEND noninteractive
