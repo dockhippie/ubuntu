@@ -13,7 +13,6 @@ This is our minimal customized [Ubuntu](http://www.ubuntu.com/) base image based
 * [15.10](https://github.com/dockhippie/ubuntu/tree/15.10) available as ```webhippie/ubuntu:15.10``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/ubuntu/)
 * [15.04](https://github.com/dockhippie/ubuntu/tree/15.04) available as ```webhippie/ubuntu:15.04``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/ubuntu/)
 * [14.04](https://github.com/dockhippie/ubuntu/tree/14.04) available as ```webhippie/ubuntu:14.04``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/ubuntu/)
-* [13.04](https://github.com/dockhippie/ubuntu/tree/13.04) available as ```webhippie/ubuntu:13.04``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/ubuntu/)
 * [12.04](https://github.com/dockhippie/ubuntu/tree/12.04) available as ```webhippie/ubuntu:12.04``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/ubuntu/)
 
 
