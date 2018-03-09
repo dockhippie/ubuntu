@@ -12,7 +12,8 @@ RUN apt-get update && \
     ncurses-base \
     vim \
     curl \
-    procps && \
+    procps \
+    apt-transport-https && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
