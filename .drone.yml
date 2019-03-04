@@ -169,8 +169,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 18.04
-    dockerfile: 18.04/Dockerfile.amd64
+    context: v18.04
+    dockerfile: v18.04/Dockerfile.amd64
     dry_run: true
     repo: webhippie/ubuntu
     tags: 18.04-amd64
@@ -182,8 +182,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 18.04
-    dockerfile: 18.04/Dockerfile.amd64
+    context: v18.04
+    dockerfile: v18.04/Dockerfile.amd64
     password:
       from_secret: docker_password
     repo: webhippie/ubuntu
@@ -212,8 +212,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 18.04
-    dockerfile: 18.04/Dockerfile.arm32v7
+    context: v18.04
+    dockerfile: v18.04/Dockerfile.arm32v7
     dry_run: true
     repo: webhippie/ubuntu
     tags: 18.04-arm32v7
@@ -225,8 +225,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 18.04
-    dockerfile: 18.04/Dockerfile.arm32v7
+    context: v18.04
+    dockerfile: v18.04/Dockerfile.arm32v7
     password:
       from_secret: docker_password
     repo: webhippie/ubuntu
@@ -255,8 +255,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 18.04
-    dockerfile: 18.04/Dockerfile.arm64v8
+    context: v18.04
+    dockerfile: v18.04/Dockerfile.arm64v8
     dry_run: true
     repo: webhippie/ubuntu
     tags: 18.04-arm64v8
@@ -268,8 +268,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 18.04
-    dockerfile: 18.04/Dockerfile.arm64v8
+    context: v18.04
+    dockerfile: v18.04/Dockerfile.arm64v8
     password:
       from_secret: docker_password
     repo: webhippie/ubuntu
@@ -301,7 +301,7 @@ steps:
     ignore_missing: true
     password:
       from_secret: docker_password
-    spec: 18.04/manifest.tmpl
+    spec: v18.04/manifest.tmpl
     username:
       from_secret: docker_username
 
@@ -327,8 +327,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 16.04
-    dockerfile: 16.04/Dockerfile.amd64
+    context: v16.04
+    dockerfile: v16.04/Dockerfile.amd64
     dry_run: true
     repo: webhippie/ubuntu
     tags: 16.04-amd64
@@ -340,8 +340,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 16.04
-    dockerfile: 16.04/Dockerfile.amd64
+    context: v16.04
+    dockerfile: v16.04/Dockerfile.amd64
     password:
       from_secret: docker_password
     repo: webhippie/ubuntu
@@ -370,8 +370,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 16.04
-    dockerfile: 16.04/Dockerfile.arm32v7
+    context: v16.04
+    dockerfile: v16.04/Dockerfile.arm32v7
     dry_run: true
     repo: webhippie/ubuntu
     tags: 16.04-arm32v7
@@ -383,8 +383,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 16.04
-    dockerfile: 16.04/Dockerfile.arm32v7
+    context: v16.04
+    dockerfile: v16.04/Dockerfile.arm32v7
     password:
       from_secret: docker_password
     repo: webhippie/ubuntu
@@ -413,8 +413,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 16.04
-    dockerfile: 16.04/Dockerfile.arm64v8
+    context: v16.04
+    dockerfile: v16.04/Dockerfile.arm64v8
     dry_run: true
     repo: webhippie/ubuntu
     tags: 16.04-arm64v8
@@ -426,8 +426,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 16.04
-    dockerfile: 16.04/Dockerfile.arm64v8
+    context: v16.04
+    dockerfile: v16.04/Dockerfile.arm64v8
     password:
       from_secret: docker_password
     repo: webhippie/ubuntu
@@ -459,7 +459,7 @@ steps:
     ignore_missing: true
     password:
       from_secret: docker_password
-    spec: 16.04/manifest.tmpl
+    spec: v16.04/manifest.tmpl
     username:
       from_secret: docker_username
 
@@ -485,8 +485,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 14.04
-    dockerfile: 14.04/Dockerfile.amd64
+    context: v14.04
+    dockerfile: v14.04/Dockerfile.amd64
     dry_run: true
     repo: webhippie/ubuntu
     tags: 14.04-amd64
@@ -498,8 +498,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 14.04
-    dockerfile: 14.04/Dockerfile.amd64
+    context: v14.04
+    dockerfile: v14.04/Dockerfile.amd64
     password:
       from_secret: docker_password
     repo: webhippie/ubuntu
@@ -528,8 +528,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 14.04
-    dockerfile: 14.04/Dockerfile.arm32v7
+    context: v14.04
+    dockerfile: v14.04/Dockerfile.arm32v7
     dry_run: true
     repo: webhippie/ubuntu
     tags: 14.04-arm32v7
@@ -541,8 +541,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 14.04
-    dockerfile: 14.04/Dockerfile.arm32v7
+    context: v14.04
+    dockerfile: v14.04/Dockerfile.arm32v7
     password:
       from_secret: docker_password
     repo: webhippie/ubuntu
@@ -571,8 +571,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 14.04
-    dockerfile: 14.04/Dockerfile.arm64v8
+    context: v14.04
+    dockerfile: v14.04/Dockerfile.arm64v8
     dry_run: true
     repo: webhippie/ubuntu
     tags: 14.04-arm64v8
@@ -584,8 +584,8 @@ steps:
   pull: always
   image: plugins/docker:latest
   settings:
-    context: 14.04
-    dockerfile: 14.04/Dockerfile.arm64v8
+    context: v14.04
+    dockerfile: v14.04/Dockerfile.arm64v8
     password:
       from_secret: docker_password
     repo: webhippie/ubuntu
@@ -617,7 +617,7 @@ steps:
     ignore_missing: true
     password:
       from_secret: docker_password
-    spec: 14.04/manifest.tmpl
+    spec: v14.04/manifest.tmpl
     username:
       from_secret: docker_username
 
@@ -651,6 +651,7 @@ trigger:
   - refs/heads/master
 
 depends_on:
+- manifest-latest
 - manifest-latest
 - manifest-18.04
 - manifest-16.04
