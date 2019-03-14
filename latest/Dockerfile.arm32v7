@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu:18.10@sha256:a8cf3c478a3e9dae3162600ef5a8539f1b458e054ddb21cae8dbc5648af66f46
+FROM arm32v7/ubuntu:18.10@sha256:a1fe228ba671e5d0929a95a78c38755fc209efe79b75467596a98ffa211f83fd
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.label-schema.name="Ubuntu" \
