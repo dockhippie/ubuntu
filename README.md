@@ -9,9 +9,9 @@ This is our minimal customized [Ubuntu](http://www.ubuntu.com/) base image based
 ## Versions
 
 * [latest](./latest) available as `webhippie/ubuntu:latest`
-* [18.04](./18.04) available as `webhippie/ubuntu:18.04`
-* [16.04](./16.04) available as `webhippie/ubuntu:16.04`
-* [14.04](./14.04) available as `webhippie/ubuntu:14.04`
+* [18.04](./v18.04) available as `webhippie/ubuntu:18.04`
+* [16.04](./v16.04) available as `webhippie/ubuntu:16.04`
+* [14.04](./v14.04) available as `webhippie/ubuntu:14.04`
 
 
 ## Volumes
