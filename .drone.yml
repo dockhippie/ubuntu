@@ -671,6 +671,7 @@ steps:
   settings:
     repositories:
     - dockhippie/mongodb
+    - dockhippie/unifi
     server: https://cloud.drone.io
     token:
       from_secret: downstream_token

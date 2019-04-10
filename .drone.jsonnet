@@ -21,5 +21,6 @@ local name = 'webhippie/ubuntu';
   pipeline.microbadger(['latest', '18.04', '16.04', '14.04']),
   pipeline.downstream(['latest', '18.04', '16.04', '14.04'], [
     'dockhippie/mongodb',
+    'dockhippie/unifi',
   ]),
 ]
