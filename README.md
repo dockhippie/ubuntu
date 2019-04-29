@@ -27,7 +27,7 @@ This is our minimal customized [Ubuntu](http://www.ubuntu.com/) base image based
 ## Available environment variables
 
 ```bash
-ENV CRON_ENABLED false
+CRON_ENABLED = false
 ```
 
 
