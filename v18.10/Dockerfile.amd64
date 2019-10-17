@@ -1,4 +1,4 @@
-FROM ubuntu:18.10
+FROM amd64/ubuntu:18.10
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.label-schema.name="Ubuntu" \

@@ -1,4 +1,4 @@
-FROM ubuntu:14.04@sha256:b04dc5313878a8b74808d104a510e50505c79c9c11725bfdaf286f7cedb9295c
+FROM amd64/ubuntu:14.04
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.label-schema.name="Ubuntu" \
