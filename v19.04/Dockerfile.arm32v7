@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu:19.04
+FROM arm32v7/ubuntu:19.04@sha256:d845265fd29aeed83f74ef8172197c11da5746f1cef8886a65bd84c4f6f5984f
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.label-schema.name="Ubuntu" \
