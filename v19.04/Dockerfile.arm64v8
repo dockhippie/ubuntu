@@ -1,4 +1,4 @@
-FROM arm64v8/ubuntu:19.04@sha256:59ccf7701e1205623c615025ef70f311561448849ee9e3faad0c1908244c4289
+FROM arm64v8/ubuntu:19.04@sha256:e4f396e90bcc1f4487f981b5621414ab8ac9d1a75dd3a1571758ca4e09c6bc32
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.label-schema.name="Ubuntu" \
