@@ -1,4 +1,4 @@
-FROM arm64v8/ubuntu:19.10@sha256:01769b437bc4e39929a3385ecb731fa513ad4f4c57cd3a1bb448912131d1a37f
+FROM arm64v8/ubuntu:19.10
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.label-schema.name="Ubuntu" \
@@ -15,32 +15,8 @@ CMD ["bash"]
 
 RUN apt-get update && \
   apt-get upgrade -y && \
-  apt-get install -y ca-certificates bash bash-completion ncurses-base vim curl procps apt-transport-https cron && \
+  apt-get install -y ca-certificates bash bash-completion ncurses-base vim curl procps apt-transport-https cron execline s6 && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
 COPY ./overlay ./overlay-arm64v8 /
-
-RUN apt-get update && \
-  apt-get install -y build-essential && \
-  curl -sSL -o- https://github.com/skarnet/skalibs/archive/v2.7.0.0.tar.gz | tar -xvz -C /tmp && \
-  cd /tmp/skalibs-2.7.0.0 && \
-  ./configure && \
-  make && \
-  make install && \
-  rm -rf /tmp/skalibs-2.7.0.0 && \
-  curl -sSL -o- https://github.com/skarnet/execline/archive/v2.5.0.1.tar.gz | tar -xvz -C /tmp && \
-  cd /tmp/execline-2.5.0.1 && \
-  ./configure && \
-  make && \
-  make install && \
-  rm -rf /tmp/execline-2.5.0.1 && \
-  curl -sSL -o- https://github.com/skarnet/s6/archive/v2.7.2.2.tar.gz | tar -xvz -C /tmp && \
-  cd /tmp/s6-2.7.2.2 && \
-  ./configure && \
-  make && \
-  make install && \
-  rm -rf /tmp/s6-2.7.2.2 && \
-  apt-get purge -y build-essential && \
-  apt-get clean && \
-  rm -rf /var/lib/apt/lists/*
