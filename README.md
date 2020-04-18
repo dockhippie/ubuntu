@@ -8,13 +8,12 @@ This is our minimal customized [Ubuntu](http://www.ubuntu.com/) base image based
 
 ## Versions
 
-* [latest](./latest) available as `webhippie/ubuntu:latest`
-* [19.10](./v19.10) available as `webhippie/ubuntu:19.10`
-* [19.04](./v19.04) available as `webhippie/ubuntu:19.04`
-* [18.10](./v18.10) available as `webhippie/ubuntu:18.10`
-* [18.04](./v18.04) available as `webhippie/ubuntu:18.04`
-* [16.04](./v16.04) available as `webhippie/ubuntu:16.04`
-* [14.04](./v14.04) available as `webhippie/ubuntu:14.04`
+* [latest](https://github.com/dockhippie/ubuntu/tree/master/latest) available as `webhippie/ubuntu:latest`
+* [20.04](https://github.com/dockhippie/ubuntu/tree/master/v20.04) available as `webhippie/ubuntu:20.04`
+* [19.10](https://github.com/dockhippie/ubuntu/tree/master/v19.10) available as `webhippie/ubuntu:19.10`
+* [18.04](https://github.com/dockhippie/ubuntu/tree/master/v18.04) available as `webhippie/ubuntu:18.04`
+* [16.04](https://github.com/dockhippie/ubuntu/tree/master/v16.04) available as `webhippie/ubuntu:16.04`
+* [14.04](https://github.com/dockhippie/ubuntu/tree/master/v14.04) available as `webhippie/ubuntu:14.04`
 
 
 ## Volumes

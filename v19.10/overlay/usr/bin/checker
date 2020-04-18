@@ -6,6 +6,6 @@ then
     exit 0
 else
     echo "failed"
-    /bin/s6-svscanctl -t /etc/s6
+    /usr/bin/s6-svscanctl -t /etc/s6
     exit 1
 fi
