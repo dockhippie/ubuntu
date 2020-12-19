@@ -15,8 +15,9 @@ jobs:
     strategy:
       matrix:
         folder:
+          - v21.04
+          - v20.10
           - v20.04
-          - v19.10
           - v18.04
           - v16.04
           - v14.04
