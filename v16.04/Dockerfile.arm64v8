@@ -1,10 +1,8 @@
 FROM arm64v8/ubuntu:16.04@sha256:c5c81944edf2d122d5b2f6b9f754d2a35693cd3ae6b036150342ccd32391552d
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
-  org.label-schema.name="Ubuntu" \
-  org.label-schema.version="16.04" \
-  org.label-schema.vendor="Thomas Boerger" \
-  org.label-schema.schema-version="1.0"
+  org.opencontainers.image.title="Ubuntu" \
+  org.opencontainers.image.vendor="Thomas Boerger"
 
 ENV CRON_ENABLED false
 ENV TERM xterm

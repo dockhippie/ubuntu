@@ -1,18 +1,15 @@
-image: webhippie/ubuntu:14.04
+image: webhippie/ubuntu:16.04
 manifests:
-  -
-    image: webhippie/ubuntu:14.04-amd64
+  - image: webhippie/ubuntu:16.04-amd64
     platform:
       architecture: amd64
       os: linux
-  -
-    image: webhippie/ubuntu:14.04-arm64v8
+  - image: webhippie/ubuntu:16.04-arm64v8
     platform:
       architecture: arm64
       os: linux
       variant: v8
-  -
-    image: webhippie/ubuntu:14.04-arm32v7
+  - image: webhippie/ubuntu:16.04-arm32v7
     platform:
       architecture: arm
       os: linux

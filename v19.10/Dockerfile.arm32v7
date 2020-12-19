@@ -1,10 +1,8 @@
 FROM arm32v7/ubuntu:19.10@sha256:6f9538a5fe9ab482123833ebc726904801b15c14112639e1103029fb18dfaebb
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
-  org.label-schema.name="Ubuntu" \
-  org.label-schema.version="19.10" \
-  org.label-schema.vendor="Thomas Boerger" \
-  org.label-schema.schema-version="1.0"
+  org.opencontainers.image.title="Ubuntu" \
+  org.opencontainers.image.vendor="Thomas Boerger"
 
 ENV CRON_ENABLED false
 ENV TERM xterm

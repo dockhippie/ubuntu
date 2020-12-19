@@ -1,10 +1,8 @@
 FROM amd64/ubuntu:19.10@sha256:6852f9e05c5bce8aa77173fa83ce611f69f271ee3a16503c5f80c199969fd1eb
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
-  org.label-schema.name="Ubuntu" \
-  org.label-schema.version="19.10" \
-  org.label-schema.vendor="Thomas Boerger" \
-  org.label-schema.schema-version="1.0"
+  org.opencontainers.image.title="Ubuntu" \
+  org.opencontainers.image.vendor="Thomas Boerger"
 
 ENV CRON_ENABLED false
 ENV TERM xterm
