@@ -1,0 +1,22 @@
+FROM arm32v7/ubuntu:19.10@sha256:6f9538a5fe9ab482123833ebc726904801b15c14112639e1103029fb18dfaebb
+
+LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
+  org.opencontainers.image.title="Ubuntu" \
+  org.opencontainers.image.vendor="Thomas Boerger"
+
+ENV CRON_ENABLED false
+ENV TERM xterm
+ENV DEBIAN_FRONTEND noninteractive
+
+ENTRYPOINT ["/usr/bin/entrypoint"]
+CMD ["bash"]
+
+RUN apt-get update && \
+  apt-get upgrade -y && \
+  apt-get install -y ca-certificates bash bash-completion ncurses-base vim curl procps apt-transport-https cron execline s6 && \
+  curl -sSLo /usr/bin/wait-for-it https://raw.githubusercontent.com/thegeeklab/wait-for/d17c23172a39d7555f184d916881aeae6d446a22/wait-for && \
+  chmod +x /usr/bin/wait-for-it && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
+
+COPY ./overlay ./overlay-arm32v7 /

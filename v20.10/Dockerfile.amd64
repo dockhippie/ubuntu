@@ -1,0 +1,22 @@
+FROM amd64/ubuntu:20.10@sha256:1d7b639619bdca2d008eca2d5293e3c43ff84cbee597ff76de3b7a7de3e84956
+
+LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
+  org.opencontainers.image.title="Ubuntu" \
+  org.opencontainers.image.vendor="Thomas Boerger"
+
+ENV CRON_ENABLED false
+ENV TERM xterm
+ENV DEBIAN_FRONTEND noninteractive
+
+ENTRYPOINT ["/usr/bin/entrypoint"]
+CMD ["bash"]
+
+RUN apt-get update && \
+  apt-get upgrade -y && \
+  apt-get install -y ca-certificates bash bash-completion ncurses-base vim curl procps apt-transport-https cron execline s6 && \
+  curl -sSLo /usr/bin/wait-for-it https://raw.githubusercontent.com/thegeeklab/wait-for/d17c23172a39d7555f184d916881aeae6d446a22/wait-for && \
+  chmod +x /usr/bin/wait-for-it && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
+
+COPY ./overlay ./overlay-amd64 /
