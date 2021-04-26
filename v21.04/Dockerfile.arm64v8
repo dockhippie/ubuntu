@@ -1,4 +1,4 @@
-FROM arm64v8/ubuntu:21.04@sha256:2ad52dc0fa42fcca21edf685082ff3f76bde3ffbe1a0e3fa4f8b7e1c3bb5f4f4
+FROM arm64v8/ubuntu:21.04@sha256:0fb0d395bd896ff4670143d0515fb431c638cf9accc7f543114e33b392700eb2
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.opencontainers.image.title="Ubuntu" \
