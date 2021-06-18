@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu:16.04@sha256:223cd9fdf221af04bfdc1974f07820da06c12b855fa6c0ef9dd12b17a396c1b0
+FROM arm32v7/ubuntu:16.04@sha256:f57d1d9861bfd91606b02d40f788c11da6d0156882ca29e7f69c2ccb4fbf45f0
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.opencontainers.image.title="Ubuntu" \
