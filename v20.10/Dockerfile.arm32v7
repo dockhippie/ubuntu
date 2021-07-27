@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu:20.10@sha256:c6ecf83027c5771ed2f91b721fc693495117c700b11f5ed11af6fe7d1cb31870
+FROM arm32v7/ubuntu:20.10@sha256:52dba2769548fe9bd851b817e4c0339c8d0d9bda932968d5191a5e9a616124ee
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.opencontainers.image.title="Ubuntu" \
