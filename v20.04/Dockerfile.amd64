@@ -1,8 +1,26 @@
-FROM amd64/ubuntu:20.04@sha256:1e48201ccc2ab83afc435394b3bf70af0fa0055215c1e26a5da9b50a1ae367c9
+FROM ubuntu:20.04@sha256:1e48201ccc2ab83afc435394b3bf70af0fa0055215c1e26a5da9b50a1ae367c9 AS build
 
-LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
-  org.opencontainers.image.title="Ubuntu" \
-  org.opencontainers.image.vendor="Thomas Boerger"
+# renovate: datasource=github-releases depName=thegeeklab/wait-for
+ENV WAITFOR_VERSION=0.2.0
+
+RUN wget -O /tmp/wait-for-it https://github.com/thegeeklab/wait-for/releases/download/v${WAITFOR_VERSION}/wait-for
+
+# renovate: datasource=github-releases depName=hairyhenderson/gomplate
+ENV GOMPLATE_VERSION=3.9.0
+
+RUN wget -O /tmp/gomplate https://github.com/hairyhenderson/gomplate/releases/download/v${GOMPLATE_VERSION}/gomplate_linux-amd64
+
+# renovate: datasource=github-releases depName=krallin/tini
+ENV TINI_VERSION=0.19.0
+
+RUN wget -O /tmp/tini https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-amd64
+
+# renovate: datasource=github-releases depName=tianon/gosu
+ENV GOSU_VERSION=1.13
+
+RUN wget -O /tmp/su-exec https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64
+
+FROM ubuntu:20.04@sha256:1e48201ccc2ab83afc435394b3bf70af0fa0055215c1e26a5da9b50a1ae367c9
 
 ENV CRON_ENABLED false
 ENV TERM xterm
@@ -14,9 +32,12 @@ CMD ["bash"]
 RUN apt-get update && \
   apt-get upgrade -y && \
   apt-get install -y ca-certificates bash bash-completion ncurses-base vim curl procps apt-transport-https cron execline s6 && \
-  curl -sSLo /usr/bin/wait-for-it https://raw.githubusercontent.com/thegeeklab/wait-for/d17c23172a39d7555f184d916881aeae6d446a22/wait-for && \
-  chmod +x /usr/bin/wait-for-it && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
-COPY ./overlay ./overlay-amd64 /
+COPY ./overlay /
+
+COPY --from=build /tmp/wait-for-it /usr/bin/
+COPY --from=build /tmp/gomplate /usr/bin/
+COPY --from=build /tmp/su-exec /usr/sbin/
+COPY --from=build /tmp/tini /usr/sbin/
