@@ -1,5 +1,8 @@
 FROM arm32v7/ubuntu:19.04@sha256:16c07dac34bb78f0ec10693b6ea3905bdfd792f56916ffa2b4631554bc3ce0a2 AS build
 
+RUN apt update && \
+  apt-get install -y wget ca-certificates
+
 # renovate: datasource=github-releases depName=thegeeklab/wait-for
 ENV WAITFOR_VERSION=0.2.0
 

@@ -1,5 +1,8 @@
 FROM arm32v7/ubuntu:21.04@sha256:b7de3b708ddbdb5ca7d0a6a81f6d9df450276fc4794174a7b7a3441b00281a61 AS build
 
+RUN apt update && \
+  apt-get install -y wget ca-certificates
+
 # renovate: datasource=github-releases depName=thegeeklab/wait-for
 ENV WAITFOR_VERSION=0.2.0
 

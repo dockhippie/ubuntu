@@ -1,5 +1,8 @@
 FROM arm64v8/ubuntu:20.04@sha256:c0dd38485ed8b6e149d2fc935d1c61a3b750cda3b3eace0ad6df4abe33fa2b90 AS build
 
+RUN apt update && \
+  apt-get install -y wget ca-certificates
+
 # renovate: datasource=github-releases depName=thegeeklab/wait-for
 ENV WAITFOR_VERSION=0.2.0
 

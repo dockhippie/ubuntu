@@ -1,5 +1,8 @@
 FROM arm32v7/ubuntu:18.10@sha256:3a3c28b70daf30b7b85a626fb4774eb0dd79c6d837a36fcce80cdb7fd63506f9 AS build
 
+RUN apt update && \
+  apt-get install -y wget ca-certificates
+
 # renovate: datasource=github-releases depName=thegeeklab/wait-for
 ENV WAITFOR_VERSION=0.2.0
 

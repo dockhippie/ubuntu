@@ -1,5 +1,8 @@
 FROM arm64v8/ubuntu:16.04@sha256:1a7c76d63d768423a9908192ee61b5f25ecabf170dc009575db16a7b6f001896 AS build
 
+RUN apt update && \
+  apt-get install -y wget ca-certificates
+
 # renovate: datasource=github-releases depName=thegeeklab/wait-for
 ENV WAITFOR_VERSION=0.2.0
 
