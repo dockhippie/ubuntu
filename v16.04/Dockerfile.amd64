@@ -1,4 +1,4 @@
-FROM ubuntu:16.04@sha256:d388ba452d5f3f29399fc38c6928a65e4f28328a413c2edeee354569e7ab9bc9 AS build
+FROM ubuntu:16.04@sha256:6a3ac136b6ca623d6a6fa20a7622f098b2fae1ac05f0114386ef439d8ca89a4a AS build
 
 RUN apt update && \
   apt-get install -y wget ca-certificates
@@ -23,7 +23,7 @@ ENV GOSU_VERSION=1.13
 
 RUN wget --no-check-certificate -O /tmp/su-exec https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64
 
-FROM ubuntu:16.04@sha256:d388ba452d5f3f29399fc38c6928a65e4f28328a413c2edeee354569e7ab9bc9
+FROM ubuntu:16.04@sha256:6a3ac136b6ca623d6a6fa20a7622f098b2fae1ac05f0114386ef439d8ca89a4a
 
 ENV CRON_ENABLED false
 ENV TERM xterm
