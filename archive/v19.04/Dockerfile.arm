@@ -1,4 +1,4 @@
-FROM ubuntu:19.10@sha256:6852f9e05c5bce8aa77173fa83ce611f69f271ee3a16503c5f80c199969fd1eb AS build
+FROM arm32v7/ubuntu:19.04@sha256:16c07dac34bb78f0ec10693b6ea3905bdfd792f56916ffa2b4631554bc3ce0a2 AS build
 
 RUN apt update && \
   apt-get install -y wget ca-certificates
@@ -11,19 +11,19 @@ RUN wget --no-check-certificate -O /tmp/wait-for-it https://github.com/thegeekla
 # renovate: datasource=github-releases depName=hairyhenderson/gomplate
 ENV GOMPLATE_VERSION=3.9.0
 
-RUN wget --no-check-certificate -O /tmp/gomplate https://github.com/hairyhenderson/gomplate/releases/download/v${GOMPLATE_VERSION}/gomplate_linux-amd64
+RUN wget --no-check-certificate -O /tmp/gomplate https://github.com/hairyhenderson/gomplate/releases/download/v${GOMPLATE_VERSION}/gomplate_linux-armv7
 
 # renovate: datasource=github-releases depName=krallin/tini
 ENV TINI_VERSION=0.19.0
 
-RUN wget --no-check-certificate -O /tmp/tini https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-amd64
+RUN wget --no-check-certificate -O /tmp/tini https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-armhf
 
 # renovate: datasource=github-releases depName=tianon/gosu
 ENV GOSU_VERSION=1.13
 
-RUN wget --no-check-certificate -O /tmp/su-exec https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64
+RUN wget --no-check-certificate -O /tmp/su-exec https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-armhf
 
-FROM ubuntu:19.10@sha256:6852f9e05c5bce8aa77173fa83ce611f69f271ee3a16503c5f80c199969fd1eb
+FROM arm32v7/ubuntu:19.04@sha256:16c07dac34bb78f0ec10693b6ea3905bdfd792f56916ffa2b4631554bc3ce0a2
 
 ENV CRON_ENABLED false
 ENV TERM xterm
