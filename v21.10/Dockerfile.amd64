@@ -1,4 +1,4 @@
-FROM ubuntu:21.10 AS build
+FROM ubuntu:21.10@sha256:7821ee41a502442af4ba94beb989cc13d1e04fa5f9ea679d140edf5528923e2d AS build
 
 RUN apt update && \
   apt-get install -y wget ca-certificates
@@ -23,7 +23,7 @@ ENV GOSU_VERSION=1.13
 
 RUN wget --no-check-certificate -O /tmp/su-exec https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64
 
-FROM ubuntu:21.10
+FROM ubuntu:21.10@sha256:7821ee41a502442af4ba94beb989cc13d1e04fa5f9ea679d140edf5528923e2d
 
 ENV CRON_ENABLED false
 ENV TERM xterm
