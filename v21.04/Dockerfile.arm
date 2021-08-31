@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu:21.04@sha256:b7de3b708ddbdb5ca7d0a6a81f6d9df450276fc4794174a7b7a3441b00281a61 AS build
+FROM arm32v7/ubuntu:21.04@sha256:b61c1421a092dd4ffc0b14a6b683513d775d5daa275598c74cd34090a0424a19 AS build
 
 RUN apt update && \
   apt-get install -y wget ca-certificates
@@ -27,7 +27,7 @@ ENV GOSU_VERSION=1.13
 RUN wget --no-check-certificate -O /tmp/su-exec https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-armhf && \
   chmod +x /tmp/su-exec
 
-FROM arm32v7/ubuntu:21.04@sha256:b7de3b708ddbdb5ca7d0a6a81f6d9df450276fc4794174a7b7a3441b00281a61
+FROM arm32v7/ubuntu:21.04@sha256:b61c1421a092dd4ffc0b14a6b683513d775d5daa275598c74cd34090a0424a19
 
 ENV CRON_ENABLED false
 ENV TERM xterm
