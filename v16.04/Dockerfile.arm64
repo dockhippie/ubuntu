@@ -1,4 +1,4 @@
-FROM arm64v8/ubuntu:16.04@sha256:1a7c76d63d768423a9908192ee61b5f25ecabf170dc009575db16a7b6f001896 AS build
+FROM arm64v8/ubuntu:16.04@sha256:11c7a73a8eb322a177481fdeafc34957200f2f0d1f2192044ad5262008d4bba9 AS build
 
 RUN apt update && \
   apt-get install -y wget ca-certificates
@@ -27,7 +27,7 @@ ENV GOSU_VERSION=1.13
 RUN wget --no-check-certificate -O /tmp/su-exec https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-arm64 && \
   chmod +x /tmp/su-exec
 
-FROM arm64v8/ubuntu:16.04@sha256:1a7c76d63d768423a9908192ee61b5f25ecabf170dc009575db16a7b6f001896
+FROM arm64v8/ubuntu:16.04@sha256:11c7a73a8eb322a177481fdeafc34957200f2f0d1f2192044ad5262008d4bba9
 
 ENV CRON_ENABLED false
 ENV TERM xterm
