@@ -1,5 +1,8 @@
 FROM ubuntu:18.04@sha256:9bc830af2bef73276515a29aa896eedfa7bdf4bdbc5c1063b4c457a4bbb8cd79 AS build
 
+ENV TERM xterm
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt update && \
   apt-get install -y wget ca-certificates
 

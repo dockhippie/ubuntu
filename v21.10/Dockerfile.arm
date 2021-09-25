@@ -1,5 +1,8 @@
 FROM arm32v7/ubuntu:21.10@sha256:a72f98343595b75ef5d42ad2bfc41bc7aedf1252f85f9ca22771bf64844bd229 AS build
 
+ENV TERM xterm
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt update && \
   apt-get install -y wget ca-certificates
 
