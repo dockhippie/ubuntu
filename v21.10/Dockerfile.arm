@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu:21.10@sha256:a72f98343595b75ef5d42ad2bfc41bc7aedf1252f85f9ca22771bf64844bd229 AS build
+FROM arm32v7/ubuntu:21.10@sha256:b1f0161fd248d48bfb8c2d6b42666179d69d1c65cb9d8a5b3fefbe2078f4ff07 AS build
 
 ENV TERM xterm
 ENV DEBIAN_FRONTEND noninteractive
@@ -30,7 +30,7 @@ ENV GOSU_VERSION=1.13
 RUN wget --no-check-certificate -O /tmp/su-exec https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-armhf && \
   chmod +x /tmp/su-exec
 
-FROM arm32v7/ubuntu:21.10@sha256:a72f98343595b75ef5d42ad2bfc41bc7aedf1252f85f9ca22771bf64844bd229
+FROM arm32v7/ubuntu:21.10@sha256:b1f0161fd248d48bfb8c2d6b42666179d69d1c65cb9d8a5b3fefbe2078f4ff07
 
 ENV CRON_ENABLED false
 ENV TERM xterm
