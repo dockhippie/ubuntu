@@ -36,7 +36,7 @@ ENV CRON_ENABLED false
 ENV TERM xterm
 ENV DEBIAN_FRONTEND noninteractive
 
-ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/entrypoint"]
+ENTRYPOINT ["/usr/sbin/tini", "--", "/usr/bin/entrypoint"]
 CMD ["bash"]
 
 RUN apt-get update && \
