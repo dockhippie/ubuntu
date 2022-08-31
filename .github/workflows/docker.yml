@@ -20,10 +20,6 @@ jobs:
             tag: 22.04
             arm64: true
             arm: true
-          - folder: v21.10
-            tag: 21.10
-            arm64: true
-            arm: true
           - folder: v20.04
             tag: 20.04
             arm64: true
