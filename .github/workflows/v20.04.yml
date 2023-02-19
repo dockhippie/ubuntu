@@ -1,19 +1,19 @@
 ---
-name: latest
+name: v20.04
 
 "on":
   push:
     branches:
       - master
     paths:
-      - latest/*
-      - .github/workflows/docker.yml
+      - v20.04/*
+      - .github/workflows/v20.04.yml
   pull_request:
     branches:
       - master
     paths:
-      - latest/*
-      - .github/workflows/docker.yml
+      - v20.04/*
+      - .github/workflows/v20.04.yml
   workflow_dispatch:
 
 jobs:
@@ -67,42 +67,42 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           builder: ${{ steps.buildx.outputs.name }}
-          context: latest/
-          file: latest/Dockerfile.amd64
+          context: v20.04/
+          file: v20.04/Dockerfile.amd64
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
           labels: ${{ steps.meta.outputs.labels }}
           tags: |
-            webhippie/ubuntu:latest-amd64
-            quay.io/webhippie/ubuntu:latest-amd64
+            webhippie/ubuntu:20.04-amd64
+            quay.io/webhippie/ubuntu:20.04-amd64
 
       - name: Build arm64
         id: arm64
         uses: docker/build-push-action@v3
         with:
           builder: ${{ steps.buildx.outputs.name }}
-          context: latest/
-          file: latest/Dockerfile.arm64
+          context: v20.04/
+          file: v20.04/Dockerfile.arm64
           platforms: linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           labels: ${{ steps.meta.outputs.labels }}
           tags: |
-            webhippie/ubuntu:latest-arm64
-            quay.io/webhippie/ubuntu:latest-arm64
+            webhippie/ubuntu:20.04-arm64
+            quay.io/webhippie/ubuntu:20.04-arm64
 
       - name: Build arm
         id: arm
         uses: docker/build-push-action@v3
         with:
           builder: ${{ steps.buildx.outputs.name }}
-          context: latest/
-          file: latest/Dockerfile.arm
+          context: v20.04/
+          file: v20.04/Dockerfile.arm
           platforms: linux/arm/v7
           push: ${{ github.event_name != 'pull_request' }}
           labels: ${{ steps.meta.outputs.labels }}
           tags: |
-            webhippie/ubuntu:latest-arm
-            quay.io/webhippie/ubuntu:latest-arm
+            webhippie/ubuntu:20.04-arm
+            quay.io/webhippie/ubuntu:20.04-arm
 
       - name: Hub manifest
         id: manifest1
@@ -112,8 +112,8 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
-          template: webhippie/ubuntu:latest-ARCH
-          target: webhippie/ubuntu:latest
+          template: webhippie/ubuntu:20.04-ARCH
+          target: webhippie/ubuntu:20.04
           ignore_missing: true
 
       - name: Quay manifest
@@ -124,8 +124,8 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_PASSWORD }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
-          template: quay.io/webhippie/ubuntu:latest-ARCH
-          target: quay.io/webhippie/ubuntu:latest
+          template: quay.io/webhippie/ubuntu:20.04-ARCH
+          target: quay.io/webhippie/ubuntu:20.04
           ignore_missing: true
 
 ...
