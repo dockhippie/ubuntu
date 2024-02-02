@@ -1,4 +1,4 @@
-FROM arm64v8/ubuntu:22.04@sha256:afac4974cb9b641c068be76ab33dcce876891a51ab8d80520233ff06970018a1 AS build
+FROM arm64v8/ubuntu:22.04@sha256:0cbbf3da525db002984815828355ce8c9ceb09720d3c7bd2210ae5a7084d5804 AS build
 
 ENV TERM xterm
 ENV DEBIAN_FRONTEND noninteractive
@@ -30,7 +30,7 @@ ENV GOSU_VERSION=1.13
 RUN wget --no-check-certificate -O /tmp/su-exec https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-arm64 && \
   chmod +x /tmp/su-exec
 
-FROM arm64v8/ubuntu:22.04@sha256:afac4974cb9b641c068be76ab33dcce876891a51ab8d80520233ff06970018a1
+FROM arm64v8/ubuntu:22.04@sha256:0cbbf3da525db002984815828355ce8c9ceb09720d3c7bd2210ae5a7084d5804
 
 ENV CRON_ENABLED false
 ENV TERM xterm
