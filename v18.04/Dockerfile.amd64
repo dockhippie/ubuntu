@@ -1,4 +1,4 @@
-FROM ubuntu:18.04@sha256:152dc042452c496007f07ca9127571cb9c29697f42acbfad72324b2bb2e43c98 AS build
+FROM ubuntu:18.04 AS build
 
 ENV TERM=xterm
 ENV DEBIAN_FRONTEND=noninteractive
@@ -11,7 +11,7 @@ ENV WAITFOR_VERSION=0.4.3
 
 RUN wget --no-check-certificate -O /tmp/wait-for-it https://github.com/thegeeklab/wait-for/releases/download/v${WAITFOR_VERSION}/wait-for && \
   chmod +x /tmp/wait-for-it && \
-  /tmp/wait-for-it --help >/dev/null
+  /tmp/wait-for-it --help 2>/dev/null
 
 # renovate: datasource=github-releases depName=hairyhenderson/gomplate
 ENV GOMPLATE_VERSION=4.3.3
@@ -34,7 +34,7 @@ RUN wget --no-check-certificate -O /tmp/su-exec https://github.com/tianon/gosu/r
   chmod +x /tmp/su-exec && \
   /tmp/su-exec --help >/dev/null
 
-FROM ubuntu:18.04@sha256:152dc042452c496007f07ca9127571cb9c29697f42acbfad72324b2bb2e43c98
+FROM ubuntu:18.04
 
 ENV CRON_ENABLED=false
 ENV TERM=xterm
