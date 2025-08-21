@@ -1,4 +1,4 @@
-FROM arm64v8/ubuntu:14.04 AS build
+FROM arm64v8/ubuntu:14.04.5 AS build
 
 ENV TERM=xterm
 ENV DEBIAN_FRONTEND=noninteractive
@@ -34,7 +34,7 @@ RUN wget --no-check-certificate -O /tmp/su-exec https://github.com/tianon/gosu/r
   chmod +x /tmp/su-exec && \
   /tmp/su-exec --help >/dev/null
 
-FROM arm64v8/ubuntu:14.04
+FROM arm64v8/ubuntu:14.04.5
 
 ENV CRON_ENABLED=false
 ENV TERM=xterm
