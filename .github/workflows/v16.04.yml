@@ -21,6 +21,7 @@ name: v16.04
 
 permissions:
   contents: read
+  packages: write
 
 jobs:
   docker:
