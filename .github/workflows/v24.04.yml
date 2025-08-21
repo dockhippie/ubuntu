@@ -21,6 +21,7 @@ name: v24.04
 
 permissions:
   contents: read
+  packages: write
 
 jobs:
   docker:
