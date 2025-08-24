@@ -99,6 +99,8 @@ jobs:
           platforms: ${{ matrix.variant.platform }}
           push: ${{ github.event_name != 'pull_request' }}
           labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           tags: |
             webhippie/ubuntu:24.04-${{ matrix.variant.arch }}
             quay.io/webhippie/ubuntu:24.04-${{ matrix.variant.arch }}
