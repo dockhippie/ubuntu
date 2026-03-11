@@ -1,7 +1,7 @@
 ---
 repository:
   name: ubuntu
-  description: Docker images for ubuntu
+  description: Docker images for Ubuntu
   topics: docker, image
 
   private: false
