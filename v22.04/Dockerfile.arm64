@@ -1,4 +1,4 @@
-FROM arm64v8/ubuntu:22.04@sha256:30ad263a997b02943ec348bf2ff4cc005b669cea721d24162cb57b8a2c50e094 AS build
+FROM arm64v8/ubuntu:22.04@sha256:d0bf7c5d6f5de1b3d1443fd7044fe3101e8be2c32cf4b1e1892b263a752f79a4 AS build
 
 ENV TERM=xterm
 ENV DEBIAN_FRONTEND=noninteractive
@@ -34,7 +34,7 @@ RUN wget --no-check-certificate -O /tmp/su-exec https://github.com/tianon/gosu/r
   chmod +x /tmp/su-exec && \
   /tmp/su-exec --help >/dev/null
 
-FROM arm64v8/ubuntu:22.04@sha256:30ad263a997b02943ec348bf2ff4cc005b669cea721d24162cb57b8a2c50e094
+FROM arm64v8/ubuntu:22.04@sha256:d0bf7c5d6f5de1b3d1443fd7044fe3101e8be2c32cf4b1e1892b263a752f79a4
 
 ENV CRON_ENABLED=false
 ENV TERM=xterm
